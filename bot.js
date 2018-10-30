@@ -14,7 +14,7 @@ client.on('voiceStateUpdate', (old, now) => {
 
 client.on('voiceStateUpdate', (old, now) => {
   const channel = client.channels.get('506697786209861644');
-  const currentSize = guild.memberCount
+  const currentSize = client.guild.memberCount
   const size = channel.name.match(/\[\s(\d+)\s\]/);
   if (!size) return channel.setName(`Member Count: [ ${currentSize} ]`);
   if (currentSize !== size) channel.setName(`Member Count: [ ${currentSize} ]`);
